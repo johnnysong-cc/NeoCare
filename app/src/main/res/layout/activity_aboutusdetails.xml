@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/aboutus_item"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:paddingRight="16dp"
+    android:layout_gravity="center"
+    android:background="@drawable/rounded_background"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    >
+
+    <!-- ImageView for Developer Image -->
+    <ImageView
+        android:id="@+id/ivDevImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/ivDevImage"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:id="@+id/tvDevName"
+            android:text="@string/dev_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            android:background="#30ffffff"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/black"
+            android:padding="10dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/tvDevId"
+            android:text="@string/dev_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            android:background="#30ffffff"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/black"
+            android:padding="10dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/tvDevUnit"
+            android:text="@string/dev_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:background="#30ffffff"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/black"
+            android:padding="10dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+</RelativeLayout>
