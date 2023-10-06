@@ -26,6 +26,8 @@
                 android:value="" />
         </activity>
         <activity android:name=".views.TeamMembersActivity"/>
+        <activity android:name=".views.AboutUsActivity"/>
+        <activity android:name=".views.HomePageActivity"/>
     </application>
 
 </manifest>

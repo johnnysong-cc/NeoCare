@@ -3,4 +3,27 @@
     <string name="dev_name">Student Name: </string>
     <string name="dev_id">Student Id: </string>
     <string name="dev_unit">Student Program: </string>
+    <string name="about_us">
+        The provision of ambulance services is a critical component of emergency medical care; however, the system is facing several challenges.
+        One of the main challenges is the lack of tracking status of ambulances and automated dispatch, which can lead to delays in emergency response and poor coordination between ambulances and medical facilities.
+        Additionally, the reliance on manual systems for dispatching and tracking ambulances can also lead to errors and inefficiencies.
+        \n\n
+        Furthermore, the high cost of ambulance services can also limit access to emergency medical care for many individuals, particularly those who are uninsured or underinsured.
+        Another challenge is the shortage of trained and certified emergency medical technicians (EMTs) in some areas.
+        The increasing demand for ambulance services due to an aging population and the rise of chronic conditions is also putting a strain on the current system.
+        \n\n
+        Therefore, innovative solutions are needed to improve the efficiency and effectiveness of emergency response and ensure that all individuals have access to emergency medical care when they need it.
+        A centralized system for dispatching and tracking the status of ambulances has been implemented using a web-based application for an ambulance service provider.
+        This application allows for more efficient and effective emergency response, as well as improved communication between ambulances and medical facilities.
+        \n\n
+        However, there is a growing need for patients to connect with ambulance services, a gap that will be addressed through the development of a mobile application.
+        This new application will complement the existing platform by providing a direct connection to patients via their mobile phones.
+        The work outlined in the TR aimed to address the need for an enhanced and comprehensive ambulance dispatch system.
+        \n\n
+        The web-based system primarily caters to healthcare providers, lacking a portal for patients seeking immediate ambulance services.
+        The scope of this report includes the design and development of a mobile-based application.
+        This application allows patients to request ambulance services, access critical first aid information, and provide feedback while responders locate patients.
+        The procedures involved in this project include requirement gathering, design, development, testing, and deployment.
+        The overall objective of the project is to develop a mobile application that enhances the efficiency and effectiveness of emergency response by enabling patients to request a service while receiving relevant first aid tips.
+</string>
 </resources>

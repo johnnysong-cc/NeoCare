@@ -12,6 +12,7 @@ import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
 import androidx.appcompat.app.AlertDialog
 import com.gokulraj.neocare.databinding.ActivityMainBinding
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,10 +25,14 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.startButton.setOnClickListener {
-            startActivity(Intent(this, TeamMembersActivity::class.java))
+            startActivity(Intent(this, HomePageActivity::class.java))
         }
         binding.teamMembersLink.setOnClickListener {
             startActivity(Intent(this, TeamMembersActivity::class.java))
+        }
+
+        binding.aboutUsLink.setOnClickListener {
+            startActivity(Intent(this, AboutUsActivity::class.java))
         }
 
 
@@ -42,9 +47,10 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("Yes") { _, _ ->
                 // If the user clicks "Yes", exit the app
                 finishAffinity()
+                exitProcess(0)
             }
             .setNegativeButton("No", null)
             .show()
-    }
 
+    }
 }

@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvAboutHeader"
+        android:id="@+id/tvTeamHeader"
         android:text="Our Team"
         android:textSize="25dp"
         android:textColor="@color/white"
@@ -28,7 +28,7 @@
         android:clipToPadding="true"
         android:padding="16dp"
         android:scrollbars="vertical"
-        android:layout_below="@id/tvAboutHeader"
+        android:layout_below="@id/tvTeamHeader"
         tools:listitem="@layout/activity_teammembersdetails" />
 
 </RelativeLayout>
