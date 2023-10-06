@@ -17,6 +17,10 @@ class HomePageActivity:AppCompatActivity() {
         binding = ActivityHomepageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        
+
+
         binding.teamMembersLink.setOnClickListener {
             startActivity(Intent(this, TeamMembersActivity::class.java))
         }
