@@ -28,7 +28,7 @@ class TeamMembersActivity:AppCompatActivity(){
         val developerList = ArrayList<TeamMembersEntity>()
         developerList.add(TeamMembersEntity("Gokulraj Venugopal", "301202722", "Health Informatics Technology",R.drawable.gokul_image))
         developerList.add(TeamMembersEntity("Vinny Mariam Vinu", "301234317", "Health Informatics Technology",R.drawable.vinny_image))
-        developerList.add(TeamMembersEntity("Husna Fatima", "300993436", "Health Informatics Technology",R.drawable.developer_image))
+        developerList.add(TeamMembersEntity("Husna Fatima", "300993436", "Health Informatics Technology",R.drawable.husna_image))
         developerList.add(TeamMembersEntity("Lea Marie Magbalot", "301145757", "Health Informatics Technology",R.drawable.lea_image))
         developerList.add(TeamMembersEntity("Zhiyang Song", "301167073", "Health Informatics Technology",R.drawable.zong_image))
 

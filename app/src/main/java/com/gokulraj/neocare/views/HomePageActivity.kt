@@ -1,9 +1,11 @@
 package com.gokulraj.neocare.views
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.gokulraj.neocare.databinding.ActivityHomepageBinding
-import com.gokulraj.neocare.databinding.ActivityMainBinding
+import kotlin.system.exitProcess
 
 class HomePageActivity:AppCompatActivity() {
 
@@ -14,6 +16,28 @@ class HomePageActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomepageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.teamMembersLink.setOnClickListener {
+            startActivity(Intent(this, TeamMembersActivity::class.java))
+        }
+
+        binding.aboutUsLink.setOnClickListener {
+            startActivity(Intent(this, AboutUsActivity::class.java))
+        }
+
+    }
+
+    override fun onBackPressed() {
+        AlertDialog.Builder(this)
+            .setTitle("Exit App")
+            .setMessage("Are you sure you want to exit?")
+            .setPositiveButton("Yes") { _, _ ->
+                // If the user clicks "Yes", exit the app
+                finishAffinity()
+                exitProcess(0)
+            }
+            .setNegativeButton("No", null)
+            .show()
 
     }
 }

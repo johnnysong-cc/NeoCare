@@ -5,6 +5,8 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -24,33 +26,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.startButton.setOnClickListener {
+        /*binding.startButton.setOnClickListener {
             startActivity(Intent(this, HomePageActivity::class.java))
         }
-        binding.teamMembersLink.setOnClickListener {
-            startActivity(Intent(this, TeamMembersActivity::class.java))
-        }
 
-        binding.aboutUsLink.setOnClickListener {
-            startActivity(Intent(this, AboutUsActivity::class.java))
-        }
+         */
 
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, HomePageActivity::class.java))
+        }, 5000)
 
 
     }
 
 
-    override fun onBackPressed() {
-        AlertDialog.Builder(this)
-            .setTitle("Exit App")
-            .setMessage("Are you sure you want to exit?")
-            .setPositiveButton("Yes") { _, _ ->
-                // If the user clicks "Yes", exit the app
-                finishAffinity()
-                exitProcess(0)
-            }
-            .setNegativeButton("No", null)
-            .show()
 
-    }
 }

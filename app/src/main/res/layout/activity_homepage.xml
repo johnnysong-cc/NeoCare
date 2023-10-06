@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.MainActivity"
     android:background="@drawable/back"
     android:orientation="vertical">
 
@@ -12,8 +9,35 @@
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/logo" />
+    <TextView
+        android:id="@+id/teamMembersLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Our Team"
+        android:textSize="20sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/aboutUsLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:textSize="20sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_below="@+id/teamMembersLink"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_margin="20dp"/>
+
+
 
 </RelativeLayout>
