@@ -22,39 +22,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Find the TextView by its ID
-        val aboutUsLink = binding.aboutUsLink
-
-        // Create a SpannableString with underlined text
-        val spannableString = SpannableString("About Us")
-
-        // Apply UnderlineSpan to the text
-        spannableString.setSpan(UnderlineSpan(), 0, spannableString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-        // Apply other styles if needed, e.g., changing text color and style
-        spannableString.setSpan(ForegroundColorSpan(Color.CYAN), 0, spannableString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableString.setSpan(StyleSpan(Typeface.BOLD), 0, spannableString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-        // Set the modified SpannableString as the text for the TextView
-        aboutUsLink.text = spannableString
-
-        // Set an onClick listener for the TextView
-        aboutUsLink.setOnClickListener {
-            // Handle the click event (e.g., navigate to the "About Us" screen)
-            openAboutUsActivity()
-        }
 
         binding.startButton.setOnClickListener {
-            startActivity(Intent(this, AboutUsActivity::class.java))
-
-
+            startActivity(Intent(this, TeamMembersActivity::class.java))
+        }
+        binding.teamMembersLink.setOnClickListener {
+            startActivity(Intent(this, TeamMembersActivity::class.java))
         }
 
+
+
     }
-    private fun openAboutUsActivity() {
-        // Implement your logic to open the "About Us" screen here
-        startActivity(Intent(this, AboutUsActivity::class.java))
-    }
+
 
     override fun onBackPressed() {
         AlertDialog.Builder(this)

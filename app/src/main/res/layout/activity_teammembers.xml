@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvAboutHeader"
-        android:text="About Us"
+        android:text="Our Team"
         android:textSize="25dp"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -29,6 +29,6 @@
         android:padding="16dp"
         android:scrollbars="vertical"
         android:layout_below="@id/tvAboutHeader"
-        tools:listitem="@layout/activity_aboutusdetails" />
+        tools:listitem="@layout/activity_teammembersdetails" />
 
 </RelativeLayout>

@@ -17,10 +17,10 @@
         android:src="@drawable/logo" />
 
     <TextView
-        android:id="@+id/aboutUsLink"
+        android:id="@+id/teamMembersLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About Us"
+        android:text="Our Team"
         android:textSize="20sp"
         android:textColor="@android:color/holo_blue_dark"
         android:layout_below="@+id/logo"
@@ -34,7 +34,7 @@
         android:text="Start"
         android:textSize="30sp"
         android:theme="@style/ButtonStyle"
-        android:layout_below="@+id/aboutUsLink"
+        android:layout_below="@+id/teamMembersLink"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_shape"
         android:layout_centerHorizontal="true"/>

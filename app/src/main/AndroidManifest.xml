@@ -25,7 +25,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".views.AboutUsActivity"/>
+        <activity android:name=".views.TeamMembersActivity"/>
     </application>
 
 </manifest>

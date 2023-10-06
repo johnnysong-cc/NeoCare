@@ -7,11 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gokulraj.neocare.R
-import com.gokulraj.neocare.database.DeveloperEntity
+import com.gokulraj.neocare.database.TeamMembersEntity
 
 
-class AboutUsAdapter(private val developerList: List<DeveloperEntity>) :
-    RecyclerView.Adapter<AboutUsAdapter.ViewHolder>() {
+class TeamMembersAdapter(private val developerList: List<TeamMembersEntity>) :
+    RecyclerView.Adapter<TeamMembersAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val devNameTextView: TextView = itemView.findViewById(R.id.tvDevName)
@@ -22,7 +22,7 @@ class AboutUsAdapter(private val developerList: List<DeveloperEntity>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.activity_aboutusdetails, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.activity_teammembersdetails, parent, false)
         return ViewHolder(view)
     }
 
