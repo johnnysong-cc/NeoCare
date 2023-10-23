@@ -1,4 +1,6 @@
 <resources>
+
+
     <string name="app_name">NeoCare</string>
     <string name="dev_name">Student Name: </string>
     <string name="dev_id">Student Id: </string>
@@ -26,4 +28,15 @@
         The procedures involved in this project include requirement gathering, design, development, testing, and deployment.
         The overall objective of the project is to develop a mobile application that enhances the efficiency and effectiveness of emergency response by enabling patients to request a service while receiving relevant first aid tips.
 </string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="company_logo">company logo</string>
+    <string name="patient_registration">Patient Registration</string>
 </resources>

@@ -10,4 +10,8 @@
     <color name="grey">#808080</color>
     <color name="red_violet">#922b3e</color>
     <color name="pink">#CF0267</color>
+    <color name="red">#d53b4b</color>
+    <color name="blue">#48c6ef</color>
+    <color name="orangy">#954535</color>
+    <color name="dark_blue">#002395</color>
 </resources>
