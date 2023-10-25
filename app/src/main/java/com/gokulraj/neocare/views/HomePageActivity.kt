@@ -19,7 +19,9 @@ class HomePageActivity:AppCompatActivity() {
 
 
         
-
+        binding.registrationLink.setOnClickListener {
+            startActivity(Intent(this,RegistrationActivity::class.java))
+        }
 
         binding.teamMembersLink.setOnClickListener {
             startActivity(Intent(this, TeamMembersActivity::class.java))
@@ -28,6 +30,7 @@ class HomePageActivity:AppCompatActivity() {
         binding.aboutUsLink.setOnClickListener {
             startActivity(Intent(this, AboutUsActivity::class.java))
         }
+
 
     }
 

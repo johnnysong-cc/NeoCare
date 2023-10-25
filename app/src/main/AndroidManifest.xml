@@ -13,12 +13,6 @@
         android:theme="@style/Theme.NeoCare"
         tools:targetApi="31">
         <activity
-            android:name=".views.RegistrationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".views.LoginActivity"
-            android:exported="false" />
-        <activity
             android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -34,6 +28,8 @@
         <activity android:name=".views.TeamMembersActivity" />
         <activity android:name=".views.AboutUsActivity" />
         <activity android:name=".views.HomePageActivity" />
+        <activity android:name=".views.LoginActivity"/>
+        <activity android:name=".views.RegistrationActivity"/>
     </application>
 
 </manifest>
