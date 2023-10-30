@@ -9,31 +9,11 @@
     android:orientation="vertical"
     tools:context=".views.RegistrationActivity">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.7"
         android:background="@color/dark_blue" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_above="@+id/card_view"
-        android:padding="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/patient_registration"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -41,7 +21,8 @@
         android:layout_alignParentBottom="true"
         app:cardCornerRadius="28dp"
         android:layout_marginBottom="-20dp"
-        android:id="@+id/card_view">
+        android:id="@+id/card_view"
+        tools:ignore="VisualLintBounds">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,7 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome"
+                android:text="@string/welcome_banner"
                 android:textColor="@color/dark_blue"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -60,107 +41,132 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Please register with your information."
-                android:alpha="0.7" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Full Name"
                 android:alpha="0.7"
-                android:textStyle="bold"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/done_icon"
-                android:hint=""
-                android:inputType="textPersonName"
-                android:minHeight="40dp" />
+                android:text="@string/please_register_with_your_information"
+                android:textColor="#757575"
+                tools:ignore="TextContrastCheck" />
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health Card Number"
-                android:alpha="0.7"
-                android:textStyle="bold"/>
-
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fullNameTil"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/done_icon"
-                android:hint=""
-                android:inputType="textPersonName"
-                android:minHeight="40dp" />
+                android:layout_height="wrap_content" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fullNameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:drawableEnd="@drawable/done_icon"
+                    android:hint="@string/full_name"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    tools:ignore="LabelFor,VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+                android:layout_height="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email Address"
-                android:alpha="0.7"
-                android:textStyle="bold"/>
-
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/healthCardNumberTil"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/done_icon"
-                android:hint=""
-                android:inputType="textEmailAddress"
-                android:minHeight="40dp" />
+                android:layout_height="wrap_content" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/healthCardNumberEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:drawableEnd="@drawable/done_icon"
+                    android:hint="@string/health_card_number"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    tools:ignore="LabelFor,TextFields,VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+                android:layout_height="10dp"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailAddressTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailAddressEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:drawableEnd="@drawable/done_icon"
+                    android:hint="@string/email_address"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    tools:ignore="LabelFor,VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password"
-                android:alpha="0.7"
-                android:textStyle="bold"/>
+                android:layout_height="10dp"/>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordTil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/password_icon"
-                android:hint=""
-                android:inputType="textPassword"
-                android:minHeight="40dp" />
+                app:passwordToggleEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="15">
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="I agree to the terms and conditions."
-                android:alpha="0.6" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:drawableEnd="@drawable/password_icon"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:maxLength="15"
+                    tools:ignore="LabelFor,VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/termsTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <CheckBox
+                    android:id="@+id/termsCb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/i_agree_to_the_terms_and_conditions"
+                    android:alpha="0.6" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
             
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Register"
+                android:text="@string/register"
                 app:cornerRadius="32dp"
-                android:backgroundTint="@color/dark_blue" />
+                android:backgroundTint="@color/dark_blue"
+                tools:ignore="InvalidId,VisualLintButtonSize" />
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
 
             <LinearLayout
+                android:id="@+id/txtLoginCredential"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center" >
@@ -168,12 +174,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Have an account? Log In now!"
+                    android:layout_marginBottom="10dp"
                     android:alpha="0.7"
+                    android:text="@string/have_an_account_log_in_now"
+                    android:textColor="#78909C"
                     android:textStyle="bold"
-                    android:layout_marginBottom="10dp"/>
+                    tools:ignore="VisualLintBounds,TextContrastCheck" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 </RelativeLayout>
