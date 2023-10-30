@@ -48,4 +48,7 @@
     <string name="i_agree_to_the_terms_and_conditions">I agree to the terms and conditions.</string>
     <string name="register">Sign Up</string>
     <string name="have_an_account_log_in_now">Have an account? Log In now!</string>
+    <string name="sign_in">Sign In</string>
+    <string name="please_sign_in_with_your_credentials">Please sign in with your credentials.</string>
+    <string name="don_t_have_an_account_register_now">Don\'t have an account? Register now!</string>
 </resources>

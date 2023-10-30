@@ -1,19 +1,34 @@
 package com.gokulraj.neocare.views
 
+import android.app.Application
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import com.gokulraj.neocare.R
+import com.gokulraj.neocare.database.Patient
 import com.gokulraj.neocare.databinding.ActivityRegistrationBinding
-//import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+import com.google.firebase.auth.userProfileChangeRequest
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.core.Context
 
 class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
 
     private lateinit var mBinding: ActivityRegistrationBinding
     //private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseDatabase: FirebaseDatabase
+    private lateinit var databaseReference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +36,9 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
         setContentView(mBinding.root)
 
         //firebaseAuth = FirebaseAuth.getInstance()
+        FirebaseApp.initializeApp(this)
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase.reference.child("patients")
 
         mBinding.fullNameEt.onFocusChangeListener = this
         mBinding.healthCardNumberEt.onFocusChangeListener = this
@@ -33,10 +51,39 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
             val healthCard = mBinding.healthCardNumberEt.text.toString()
             val email = mBinding.emailAddressEt.text.toString()
             val password =  mBinding.passwordEt.text.toString()
-            val terms = mBinding.termsCb.isSelected.toString()
+            val isTermsAccepted = mBinding.termsCb.isSelected
 
-
+            if (validateFullName() && validateHealthCardNumber() && validateEmail() && validatePassword()){
+                signUpPatient(fullName, healthCard, email, password, isTermsAccepted)
+            }
         }
+
+        mBinding.loginRedirect.setOnClickListener {
+            startActivity(Intent(this@RegistrationActivity, LoginActivity::class.java))
+            finish()
+        }
+    }
+
+    private fun signUpPatient(fullName: String, healthCard: String, email: String, password: String, isTermsAccepted: Boolean){
+        databaseReference.orderByChild("fullName").equalTo(fullName).addListenerForSingleValueEvent(object: ValueEventListener{
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (!dataSnapshot.exists()){
+                    val id = databaseReference.push().key
+                    val patientData = Patient(id, fullName, healthCard, email, password, isTermsAccepted)
+                    databaseReference.child(id!!).setValue(patientData)
+
+                    Toast.makeText(this@RegistrationActivity, "Signup Successful!", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@RegistrationActivity, LoginActivity::class.java))
+                    finish()
+                } else {
+                    Toast.makeText(this@RegistrationActivity, "Patient already exists", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@RegistrationActivity, "Database Error: ${error.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun validateFullName(): Boolean {
