@@ -9,6 +9,12 @@
     android:padding="16dp"
     tools:context=".views.FirstAidView">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select an Emergency:"
+        android:textSize="20dp" />
+
     <RadioGroup
         android:id="@+id/emergencyRadioGroup"
         android:layout_width="match_parent"
@@ -24,7 +30,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Earthquake" />
-        <!-- Add more radio buttons for other emergencies -->
+        <RadioButton
+            android:id="@+id/radioButtonFlood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flood" />
+        <RadioButton
+            android:id="@+id/radioButtonTornado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tornado" />
+        <RadioButton
+            android:id="@+id/radioButtonHurricane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hurricane" />
+        <RadioButton
+            android:id="@+id/radioButtonMedical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medical Emergency" />
+
     </RadioGroup>
 
     <TextView
