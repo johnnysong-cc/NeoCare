@@ -30,7 +30,9 @@ class HomePageActivity:AppCompatActivity() {
         binding.aboutUsLink.setOnClickListener {
             startActivity(Intent(this, AboutUsActivity::class.java))
         }
-
+        binding.firstAidLink.setOnClickListener {
+            startActivity(Intent(this, FirstAidView::class.java))
+        }
 
     }
 

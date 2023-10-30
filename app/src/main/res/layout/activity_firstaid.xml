@@ -1,0 +1,71 @@
+<!-- res/layout/activity_main.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".views.FirstAidView">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select an Emergency:"
+        android:textSize="20dp" />
+
+    <RadioGroup
+        android:id="@+id/emergencyRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/radioButtonFire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fire" />
+        <RadioButton
+            android:id="@+id/radioButtonEarthquake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earthquake" />
+        <RadioButton
+            android:id="@+id/radioButtonFlood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flood" />
+        <RadioButton
+            android:id="@+id/radioButtonTornado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tornado" />
+        <RadioButton
+            android:id="@+id/radioButtonHurricane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hurricane" />
+        <RadioButton
+            android:id="@+id/radioButtonMedical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medical Emergency" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/emergencyDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <TextView
+        android:id="@+id/firstAidInfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:paddingTop="16dp" />
+</LinearLayout>
