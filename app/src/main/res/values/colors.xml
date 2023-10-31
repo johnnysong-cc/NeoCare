@@ -14,4 +14,5 @@
     <color name="blue">#48c6ef</color>
     <color name="orangy">#954535</color>
     <color name="dark_blue">#002395</color>
+    <color name="red_button_color">#FF0000</color>
 </resources>
