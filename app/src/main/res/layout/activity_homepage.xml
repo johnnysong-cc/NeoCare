@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     android:orientation="vertical">
-
+<!--
     <Button
         android:id="@+id/requestButton"
         android:layout_width="wrap_content"
@@ -16,6 +16,7 @@
         android:background="@color/red_button_color"
         android:text="Request Emergency Services"
         android:textSize="20sp" />
+     -->
 
     <ImageView
         android:id="@+id/logo"
