@@ -18,7 +18,7 @@ class HomePageActivity:AppCompatActivity() {
         binding = ActivityHomepageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.requestButton.setOnClickListener {
+       /* binding.requestButton.setOnClickListener {
             // Handle the emergency services request here
             // You can start an emergency service activity, make a call, or perform any other action as needed.
             // For this example, we'll open the phone dialer to call an emergency number (e.g., 911).
@@ -26,6 +26,8 @@ class HomePageActivity:AppCompatActivity() {
             val intent = Intent(Intent.ACTION_DIAL, Uri.parse(phoneNumber))
             startActivity(intent)
         }
+        */
+
         
         /*binding.registrationLink.setOnClickListener {
             startActivity(Intent(this,RegistrationActivity::class.java))

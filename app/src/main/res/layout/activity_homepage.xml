@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     android:orientation="vertical">
-
+<!--
     <Button
         android:id="@+id/requestButton"
         android:layout_width="wrap_content"
@@ -16,8 +16,26 @@
         android:background="@color/red_button_color"
         android:text="Request Emergency Services"
         android:textSize="20sp" />
-
+     -->
     <ImageView
+        android:id="@+id/voiceCommandButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/voicecommand"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Call for Emergency Ambulance Services"
+        android:textColor="@color/red"
+        android:padding="16dp" />
+
+
+<ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

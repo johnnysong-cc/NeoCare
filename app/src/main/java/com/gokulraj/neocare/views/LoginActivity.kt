@@ -1,10 +1,12 @@
 package com.gokulraj.neocare.views
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.gokulraj.neocare.R
 import com.gokulraj.neocare.database.Patient
 import com.gokulraj.neocare.databinding.ActivityLoginBinding
@@ -13,6 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlin.system.exitProcess
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,6 +30,28 @@ class LoginActivity : AppCompatActivity() {
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.reference.child("patients")
+
+        /*
+        binding.requestButton.setOnClickListener {
+            // Handle the emergency services request here
+            // You can start an emergency service activity, make a call, or perform any other action as needed.
+            // For this example, we'll open the phone dialer to call an emergency number (e.g., 911).
+            val phoneNumber = "tel:911"
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse(phoneNumber))
+            startActivity(intent)
+        }
+
+         */
+
+        binding.requestImageView.setOnClickListener {
+            // Handle the emergency services request here
+            // You can start an emergency service activity, make a call, or perform any other action as needed.
+            // For this example, we'll open the phone dialer to call an emergency number (e.g., 911).
+            val phoneNumber = "tel:911"
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse(phoneNumber))
+            startActivity(intent)
+        }
+
 
         binding.btnLogin.setOnClickListener{
             val email = binding.emailAddressEt.text.toString()
@@ -107,5 +132,18 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "Database Error: ${error.message}", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+    override fun onBackPressed() {
+        AlertDialog.Builder(this)
+            .setTitle("Exit App")
+            .setMessage("Are you sure you want to exit?")
+            .setPositiveButton("Yes") { _, _ ->
+                // If the user clicks "Yes", exit the app
+                finishAffinity()
+                exitProcess(0)
+            }
+            .setNegativeButton("No", null)
+            .show()
+
     }
 }
