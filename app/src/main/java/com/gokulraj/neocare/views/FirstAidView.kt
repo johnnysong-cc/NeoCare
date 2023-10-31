@@ -16,7 +16,7 @@ class FirstAidView : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_firstaid)
 
         emergencyDescriptionTextView = findViewById(R.id.emergencyDescriptionTextView)
         firstAidInfoTextView = findViewById(R.id.firstAidInfoTextView)

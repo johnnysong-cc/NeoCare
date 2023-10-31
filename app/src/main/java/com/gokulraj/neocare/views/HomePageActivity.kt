@@ -27,10 +27,10 @@ class HomePageActivity:AppCompatActivity() {
             startActivity(intent)
         }
         
-        binding.registrationLink.setOnClickListener {
+        /*binding.registrationLink.setOnClickListener {
             startActivity(Intent(this,RegistrationActivity::class.java))
         }
-
+            */
         binding.teamMembersLink.setOnClickListener {
             startActivity(Intent(this, TeamMembersActivity::class.java))
         }

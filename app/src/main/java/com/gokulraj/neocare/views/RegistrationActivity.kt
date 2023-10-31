@@ -14,8 +14,6 @@ import com.gokulraj.neocare.database.Patient
 import com.gokulraj.neocare.databinding.ActivityRegistrationBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
-import com.google.firebase.auth.userProfileChangeRequest
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
