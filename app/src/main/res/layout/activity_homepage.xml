@@ -21,7 +21,7 @@
         android:id="@+id/voiceCommandButton"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/alert"
+        android:src="@drawable/voicecommandbutton"
         android:layout_gravity="center"
         android:layout_marginTop="20dp" />
 
