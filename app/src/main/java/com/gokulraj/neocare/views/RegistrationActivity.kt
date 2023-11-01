@@ -10,7 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import com.gokulraj.neocare.R
-import com.gokulraj.neocare.database.Patient
+import com.gokulraj.neocare.database.User
 import com.gokulraj.neocare.databinding.ActivityRegistrationBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -27,6 +27,8 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
     //private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
+    private var userType: String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,13 +38,28 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
         //firebaseAuth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(this)
         firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase.reference.child("patients")
+        databaseReference = firebaseDatabase.reference.child("users")
 
+        mBinding.radioButtonPatient.onFocusChangeListener=this
+        mBinding.radioButtonHealthcareProfessional.onFocusChangeListener=this
         mBinding.fullNameEt.onFocusChangeListener = this
         mBinding.healthCardNumberEt.onFocusChangeListener = this
         mBinding.emailAddressEt.onFocusChangeListener = this
         mBinding.passwordEt.onFocusChangeListener = this
         mBinding.termsCb.onFocusChangeListener = this
+
+        mBinding.radioButtonPatient.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                userType = "Patient"
+            }
+        }
+
+        mBinding.radioButtonHealthcareProfessional.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                userType = "Healthcare Professional"
+            }
+        }
+
 
         mBinding.btnRegister.setOnClickListener {
             val fullName = mBinding.fullNameEt.text.toString()
@@ -51,8 +68,9 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
             val password =  mBinding.passwordEt.text.toString()
             val isTermsAccepted = mBinding.termsCb.isSelected
 
+
             if (validateFullName() && validateHealthCardNumber() && validateEmail() && validatePassword()){
-                signUpPatient(fullName, healthCard, email, password, isTermsAccepted)
+                signUpUser(fullName, healthCard, email, password, isTermsAccepted)
             }
         }
 
@@ -62,19 +80,19 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
         }
     }
 
-    private fun signUpPatient(fullName: String, healthCard: String, email: String, password: String, isTermsAccepted: Boolean){
+    private fun signUpUser(fullName: String, healthCard: String, email: String, password: String, isTermsAccepted: Boolean){
         databaseReference.orderByChild("fullName").equalTo(fullName).addListenerForSingleValueEvent(object: ValueEventListener{
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (!dataSnapshot.exists()){
                     val id = databaseReference.push().key
-                    val patientData = Patient(id, fullName, healthCard, email, password, isTermsAccepted)
-                    databaseReference.child(id!!).setValue(patientData)
+                    val UserData = User(id, userType,fullName, healthCard, email, password, isTermsAccepted)
+                    databaseReference.child(id!!).setValue(UserData)
 
                     Toast.makeText(this@RegistrationActivity, "Signup Successful!", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this@RegistrationActivity, LoginActivity::class.java))
                     finish()
                 } else {
-                    Toast.makeText(this@RegistrationActivity, "Patient already exists", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegistrationActivity, "User already exists", Toast.LENGTH_SHORT).show()
                 }
             }
 

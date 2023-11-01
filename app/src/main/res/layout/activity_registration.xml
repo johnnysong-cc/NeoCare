@@ -50,6 +50,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select user type"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="20dp"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/radioGroup"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonPatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Patient" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonHealthcareProfessional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Healthcare Professional" />
+            </RadioGroup>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fullNameTil"
                 android:layout_width="match_parent"

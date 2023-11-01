@@ -8,7 +8,7 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.gokulraj.neocare.R
-import com.gokulraj.neocare.database.Patient
+import com.gokulraj.neocare.database.User
 import com.gokulraj.neocare.databinding.ActivityLoginBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase.reference.child("patients")
+        databaseReference = firebaseDatabase.reference.child("users")
 
         /*
         binding.requestButton.setOnClickListener {
@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
             val password =  binding.passwordEt.text.toString()
 
             if (validateEmail() && validatePassword()){
-                loginPatient(email, password)
+                loginUser(email, password)
             } else {
                 Toast.makeText(this@LoginActivity, "All fields are mandatory.", Toast.LENGTH_SHORT).show()
             }
@@ -110,14 +110,14 @@ class LoginActivity : AppCompatActivity() {
         return errorMsg == null
     }
 
-    private fun loginPatient(email: String, password: String){
+    private fun loginUser(email: String, password: String){
         databaseReference.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
-                    for (patientSnapshot in snapshot.children){
-                        val patientData = patientSnapshot.getValue(Patient::class.java)
+                    for (userSnapshot in snapshot.children){
+                        val userData = userSnapshot.getValue(User::class.java)
 
-                        if (patientData != null && patientData.password == password){
+                        if (userData != null && userData.password == password){
                             Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                             finish()
