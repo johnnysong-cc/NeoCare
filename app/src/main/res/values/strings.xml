@@ -51,4 +51,7 @@
     <string name="sign_in">Sign In</string>
     <string name="please_sign_in_with_your_credentials">Please sign in with your credentials.</string>
     <string name="don_t_have_an_account_register_now">Don\'t have an account? Register now!</string>
+    <string name="amb_reg_number">Reg. Number:</string>
+    <string name="driver_name">Driver Name:</string>
+    <string name="location">Location:</string>
 </resources>

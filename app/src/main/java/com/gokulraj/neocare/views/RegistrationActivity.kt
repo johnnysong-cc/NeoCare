@@ -27,7 +27,7 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
     //private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
-    private var userType: String = ""
+    private var userType: String = "Patient"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +40,7 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.reference.child("users")
 
-        mBinding.radioButtonPatient.onFocusChangeListener=this
-        mBinding.radioButtonHealthcareProfessional.onFocusChangeListener=this
+
         mBinding.fullNameEt.onFocusChangeListener = this
         mBinding.healthCardNumberEt.onFocusChangeListener = this
         mBinding.emailAddressEt.onFocusChangeListener = this
@@ -66,11 +65,12 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
             val healthCard = mBinding.healthCardNumberEt.text.toString()
             val email = mBinding.emailAddressEt.text.toString()
             val password =  mBinding.passwordEt.text.toString()
-            val isTermsAccepted = mBinding.termsCb.isSelected
+            val isTermsAccepted = mBinding.termsCb.isChecked
 
+            println(isTermsAccepted)
 
             if (validateFullName() && validateHealthCardNumber() && validateEmail() && validatePassword() && validateTerms()){
-                signUpUser(fullName, healthCard, email, password, isTermsAccepted)
+                signUpUser(fullName, healthCard, email, password, isTermsAccepted,userType)
             }
         }
 
@@ -80,7 +80,7 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
         }
     }
 
-    private fun signUpUser(fullName: String, healthCard: String, email: String, password: String, isTermsAccepted: Boolean) {
+    private fun signUpUser(fullName: String, healthCard: String, email: String, password: String, isTermsAccepted: Boolean, userType: String) {
         databaseReference.orderByChild("email").equalTo(email)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(emailSnapshot: DataSnapshot) {
@@ -304,5 +304,11 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
                 }
             }
         }
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
