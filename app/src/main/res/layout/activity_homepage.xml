@@ -42,7 +42,6 @@
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/resultTextView"
         android:src="@drawable/logo" />
 
 <!--
@@ -108,10 +107,23 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/firstAidLink"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:autoLink="web"
         android:clickable="true"
         android:text="Update Profile"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/logOutLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/updateProfileLink"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:autoLink="web"
+        android:clickable="true"
+        android:text="Log Out"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="20sp" />
 

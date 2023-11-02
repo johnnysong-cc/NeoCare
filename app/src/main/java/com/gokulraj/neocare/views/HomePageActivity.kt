@@ -1,21 +1,28 @@
 package com.gokulraj.neocare.views
 
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.speech.RecognizerIntent
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.gokulraj.neocare.databinding.ActivityHomepageBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import kotlin.system.exitProcess
 
 class HomePageActivity:AppCompatActivity() {
 
     private lateinit var binding: ActivityHomepageBinding
 
-
+    // Firebase variables
+    private lateinit var firebaseDatabase: FirebaseDatabase
+    private lateinit var databaseReference: DatabaseReference
 
 
 
@@ -23,6 +30,22 @@ class HomePageActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomepageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        // Retrieve the user type from SharedPreferences
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val userType = sharedPreferences.getString("USER_TYPE", "default_value")
+
+        if (userType != null) {
+            handleMenuOptions(userType)
+        }
+       // println(userType)
+        // Initialize Firebase
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase.reference.child("users")
+
+        // Retrieve user type from Firebase
+
 
        /* binding.requestButton.setOnClickListener {
             // Handle the emergency services request here
@@ -55,6 +78,10 @@ class HomePageActivity:AppCompatActivity() {
 
         binding.updateProfileLink.setOnClickListener {
             startActivity(Intent(this,ProfileActivity::class.java))
+        }
+
+        binding.logOutLink.setOnClickListener {
+            logoutUser()
         }
 
     }
@@ -92,6 +119,56 @@ class HomePageActivity:AppCompatActivity() {
     }
 
      */
+
+
+
+    private fun handleMenuOptions(userType: String) {
+        when (userType) {
+            "Patient" -> showPatientOptions()
+            "Healthcare Professional" -> showHealthcareProfessionalOptions()
+            // Add other user types as needed
+            else -> {
+                // Default actions if needed
+            }
+        }
+    }
+
+    private fun showPatientOptions() {
+        binding.updateProfileLink.visibility = View.VISIBLE
+        binding.teamMembersLink.visibility = View.VISIBLE
+        binding.aboutUsLink.visibility = View.VISIBLE
+        binding.logOutLink.visibility=View.VISIBLE
+        binding.firstAidLink.visibility = View.GONE // Hide this option for patients
+    }
+
+    private fun showHealthcareProfessionalOptions() {
+        binding.updateProfileLink.visibility = View.VISIBLE
+        binding.teamMembersLink.visibility = View.VISIBLE
+        binding.aboutUsLink.visibility = View.VISIBLE
+        binding.firstAidLink.visibility = View.VISIBLE // Show this option for healthcare professionals
+        binding.logOutLink.visibility=View.VISIBLE
+    }
+
+
+    private fun logoutUser() {
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.remove("USER_TYPE") // Remove the user type
+        editor.apply()
+
+        //FirebaseAuth.getInstance().signOut() // Sign out the user from Firebase Authentication
+        Toast.makeText(this, "Logout Successful", Toast.LENGTH_SHORT).show()
+
+        // Create a delayed action to start the LoginActivity after 2 seconds
+        Handler().postDelayed({
+            val intent = Intent(this@HomePageActivity, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish() // Finish the current activity
+        }, 2000) // 2000 milliseconds = 2 seconds
+    }
+
+
     override fun onBackPressed() {
         AlertDialog.Builder(this)
             .setTitle("Exit App")

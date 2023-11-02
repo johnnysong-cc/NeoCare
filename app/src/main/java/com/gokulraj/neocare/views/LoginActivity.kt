@@ -1,6 +1,7 @@
 package com.gokulraj.neocare.views
 
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -161,6 +162,17 @@ class LoginActivity : AppCompatActivity() {
                         val userData = userSnapshot.getValue(User::class.java)
 
                         if (userData != null && userData.password == password){
+                            val userType = userData.userType // Accessing userType from User model
+
+                            //println(userType)
+
+                            // Storing the user type in SharedPreferences
+                            val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                            val editor = sharedPreferences.edit()
+                            editor.putString("USER_TYPE", userType)
+                            editor.apply()
+
+
                             Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                             finish()
