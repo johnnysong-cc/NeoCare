@@ -69,7 +69,9 @@
                     android:id="@+id/radioButtonPatient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Patient" />
+                    android:text="Patient"
+                    android:checked="true"
+                    />
 
                 <RadioButton
                     android:id="@+id/radioButtonHealthcareProfessional"
