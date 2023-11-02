@@ -231,7 +231,8 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
 
     private fun validateTerms(): Boolean{
         var errorMsg: String? = null
-        val value = mBinding.termsCb.isSelected
+        val value = mBinding.termsCb.isChecked
+
 
         if (!value){
             errorMsg = "Please accept the terms and conditions to continue."
