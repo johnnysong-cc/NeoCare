@@ -15,9 +15,7 @@ class HomePageActivity:AppCompatActivity() {
 
     private lateinit var binding: ActivityHomepageBinding
 
-    //Declaring a request code for voice command
 
-    private val VOICE_COMMAND_REQUEST_CODE = 100
 
 
 
@@ -42,10 +40,7 @@ class HomePageActivity:AppCompatActivity() {
         }
             */
 
-        // Attach a click listener to the voice command button
-        binding.voiceCommandButton.setOnClickListener {
-            startVoiceCommand()
-        }
+
 
         binding.teamMembersLink.setOnClickListener {
             startActivity(Intent(this, TeamMembersActivity::class.java))
@@ -58,8 +53,13 @@ class HomePageActivity:AppCompatActivity() {
             startActivity(Intent(this, FirstAidView::class.java))
         }
 
+        binding.updateProfileLink.setOnClickListener {
+            startActivity(Intent(this,ProfileActivity::class.java))
+        }
+
     }
 
+    /*
     private fun startVoiceCommand() {
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
@@ -90,6 +90,8 @@ class HomePageActivity:AppCompatActivity() {
             }
         }
     }
+
+     */
     override fun onBackPressed() {
         AlertDialog.Builder(this)
             .setTitle("Exit App")

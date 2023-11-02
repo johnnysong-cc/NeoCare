@@ -32,6 +32,7 @@
         <activity android:name=".views.AboutUsActivity" />
         <activity android:name=".views.FirstAidView" />
         <activity android:name=".views.HomePageActivity" />
+        <activity android:name=".views.ProfileActivity"/>
         <activity android:name=".views.LoginActivity"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:exported="true">
