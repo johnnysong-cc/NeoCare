@@ -84,6 +84,10 @@ class HomePageActivity:AppCompatActivity() {
             startActivity(Intent(this, AmbulanceActivity::class.java))
         }
 
+        binding.protocols.setOnClickListener {
+            startActivity(Intent(this, ProtocolActivity::class.java))
+        }
+
         binding.logOutLink.setOnClickListener {
             logoutUser()
         }
@@ -144,6 +148,7 @@ class HomePageActivity:AppCompatActivity() {
         binding.logOutLink.visibility=View.VISIBLE
         binding.firstAidLink.visibility = View.VISIBLE // Hide this option for patients
         binding.ambulanceDetails.visibility=View.GONE
+        binding.protocols.visibility=View.GONE
     }
 
     private fun showHealthcareProfessionalOptions() {
@@ -153,6 +158,7 @@ class HomePageActivity:AppCompatActivity() {
         binding.firstAidLink.visibility = View.VISIBLE // Show this option for healthcare professionals
         binding.logOutLink.visibility=View.VISIBLE
         binding.ambulanceDetails.visibility=View.VISIBLE
+        binding.protocols.visibility=View.VISIBLE
     }
 
 
