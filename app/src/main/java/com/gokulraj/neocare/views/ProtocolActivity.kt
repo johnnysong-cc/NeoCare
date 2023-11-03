@@ -19,7 +19,7 @@ class ProtocolActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_protocol)
 
         conditionSpinner = findViewById(R.id.conditionSpinner)
         viewGuidelinesButton = findViewById(R.id.viewGuidelinesButton)

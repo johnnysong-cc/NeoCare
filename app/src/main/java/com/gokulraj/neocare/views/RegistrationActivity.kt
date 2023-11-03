@@ -176,7 +176,7 @@ class RegistrationActivity : AppCompatActivity(), View.OnFocusChangeListener {
         if(value.isEmpty()){
             errorMsg = "Health card number is required."
         } else if(value.length < 12){
-            errorMsg = "Health card number is in the wrong format."
+            errorMsg = "Health card number is in the wrong format. Should be greater than 12"
         }
 
         if (errorMsg != null){
