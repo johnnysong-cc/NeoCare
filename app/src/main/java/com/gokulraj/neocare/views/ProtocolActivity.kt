@@ -16,7 +16,7 @@ class ProtocolActivity : AppCompatActivity() {
     private lateinit var viewGuidelinesButton: View
     private lateinit var guidelinesTextView: TextView
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_protocol)
