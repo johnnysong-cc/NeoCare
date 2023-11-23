@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "467380199230",
-    "project_id": "neocare-a8a98",
-    "storage_bucket": "neocare-a8a98.appspot.com"
+    "project_number": "780842151368",
+    "project_id": "neocarefirebase",
+    "storage_bucket": "neocarefirebase.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:467380199230:android:5729ea8aa109a41861566f",
+        "mobilesdk_app_id": "1:780842151368:android:e4e78289055557ec7e24fd",
         "android_client_info": {
           "package_name": "com.gokulraj.neocare"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAiDEAdjmgJEe9KulILWk706Pqnjljerao"
+          "current_key": "AIzaSyB7gvq8A27nQsxqZ2_RIRmiRSCnrDe6RMg"
         }
       ],
       "services": {

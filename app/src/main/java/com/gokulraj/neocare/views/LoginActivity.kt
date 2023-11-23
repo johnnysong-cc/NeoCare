@@ -13,6 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import com.gokulraj.neocare.R
 import com.gokulraj.neocare.database.User
 import com.gokulraj.neocare.databinding.ActivityLoginBinding
+import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -25,13 +26,13 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
-
     //Declaring a request code for voice command
 
     private val VOICE_COMMAND_REQUEST_CODE = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
