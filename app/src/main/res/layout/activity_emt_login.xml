@@ -5,36 +5,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/emt"
     android:orientation="vertical"
-    tools:context=".views.EmtLoginActivity">
+    tools:context=".views.EmtRegistrationLoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.7"
-        android:background="@color/emt_blue" />
+        android:background="@color/black" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
         app:cardCornerRadius="28dp"
-        android:padding="28dp"
+        android:layout_marginBottom="-20dp"
         android:id="@+id/card_view"
         tools:ignore="VisualLintBounds">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="363dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/emt_logo"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"/>
+                android:text=" Emergency Technician Login"
+                android:textColor="@color/dark_blue"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailAddressTil"
@@ -54,10 +55,10 @@
                 android:id="@+id/passwordTil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
+                android:hint="Password"
                 app:counterEnabled="true"
                 app:counterMaxLength="15"
-                android:hint="Password">
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordEt"
@@ -65,17 +66,23 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:minHeight="48dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.7"
+                    android:background="@color/blue" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Login"
-                app:cornerRadius="32dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/dark_blue"
+                android:text="Login"
                 android:textColor="@android:color/white"
-                android:layout_marginTop="20dp"/>
+                app:cornerRadius="32dp" />
 
             <TextView
                 android:id="@+id/forgotPasswordLink"
@@ -84,15 +91,17 @@
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
                 android:text="Forgot Password?"
-                android:textColor="@color/dark_blue"/>
+                android:textColor="@color/dark_blue" />
 
             <TextView
                 android:id="@+id/registerLink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="Don't have an account? Register now!"
-                android:textColor="@color/dark_blue"
-                android:layout_marginTop="20dp"/>
+                android:textColor="@color/dark_blue" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </RelativeLayout>
