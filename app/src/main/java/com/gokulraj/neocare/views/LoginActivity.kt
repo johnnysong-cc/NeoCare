@@ -81,6 +81,17 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this@LoginActivity, RegistrationActivity::class.java))
             finish()
         }
+
+        binding.emtLogin.setOnClickListener{
+            startActivity(Intent(this@LoginActivity, EmtLoginActivity::class.java))
+            finish()
+        }
+
+        binding.forgetRedirect.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, ForgetPasswordActivity:: class.java))
+            finish()
+        }
+
     }
 
     private fun startVoiceCommand() {

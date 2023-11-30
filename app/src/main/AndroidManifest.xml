@@ -35,6 +35,11 @@
         <activity android:name=".views.ProfileActivity"/>
         <activity android:name=".views.AmbulanceActivity"/>
         <activity android:name=".views.ProtocolActivity"/>
+        <activity android:name=".views.EmtLoginActivity"/>
+        <activity android:name=".views.EmtRegistrationActivity"/>
+        <activity android:name=".views.EmtDashboardActivity"/>
+        <activity android:name=".views.ForgetPasswordActivity"/>
+        <activity android:name=".views.ResetPasswordActivity"/>
         <activity android:name=".views.LoginActivity"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:exported="true">

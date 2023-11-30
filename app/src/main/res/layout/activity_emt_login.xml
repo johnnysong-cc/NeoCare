@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text=" Emergency Technician Login"
                 android:textColor="@color/dark_blue"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -84,6 +84,14 @@
                 android:textColor="@android:color/white"
                 app:cornerRadius="32dp" />
 
+            <!--            <TextView-->
+<!--                android:id="@+id/regularLoginLink"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margintop="20dp"-->
+<!--                android:text="regular user login here"-->
+<!--                android:textColor="@color/dark_blue" />-->
+
             <TextView
                 android:id="@+id/forgotPasswordLink"
                 android:layout_width="wrap_content"
@@ -97,7 +105,8 @@
                 android:id="@+id/registerLink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
                 android:text="Don't have an account? Register now!"
                 android:textColor="@color/dark_blue" />
 

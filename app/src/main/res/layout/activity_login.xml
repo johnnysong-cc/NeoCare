@@ -33,51 +33,83 @@
         android:text="Request Emergency Services"
         android:textSize="20sp" />
 -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
-
-    <ImageView
-        android:id="@+id/requestImageView"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:src="@drawable/alert"
-        android:scaleType="fitCenter" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Emergency Services"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_marginStart="10dp">
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-    <ImageView
-        android:id="@+id/voiceCommandButton"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/voicecommandbutton"
-        android:scaleType="fitCenter"
-         />
-        <TextView
+        <ImageView
+            android:id="@+id/requestImageView"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:src="@drawable/alert"
+            android:scaleType="fitCenter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Services"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="Voice Command for Emergency Ambulance Services"
-            android:textAlignment="center"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+        <ImageView
+            android:id="@+id/voiceCommandButton"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/voicecommandbutton"
+            android:scaleType="fitCenter"
+             />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Voice Command for Emergency Ambulance Services"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="200dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/emtLogin"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/emt_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Technician"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -156,17 +188,13 @@
                     tools:ignore="LabelFor,VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:backgroundTint="@color/dark_blue"
                 android:text="@string/sign_in"
                 app:cornerRadius="32dp"
-                android:backgroundTint="@color/dark_blue"
                 tools:ignore="InvalidId,VisualLintButtonSize" />
 
             <View
@@ -177,7 +205,7 @@
                 android:id="@+id/txtLoginCredential"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center" >
+                android:gravity="right" >
 
                 <TextView
                     android:id="@+id/registerRedirect"
@@ -189,7 +217,21 @@
                     android:textColor="#78909C"
                     android:textStyle="bold"
                     tools:ignore="InvalidId,TextContrastCheck,VisualLintBounds" />
+
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/forgetRedirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="10dp"
+                android:alpha="0.7"
+                android:text="Forget password?"
+                android:textColor="#78909C"
+                android:textStyle="bold"
+                tools:ignore="InvalidId,TextContrastCheck,VisualLintBounds" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

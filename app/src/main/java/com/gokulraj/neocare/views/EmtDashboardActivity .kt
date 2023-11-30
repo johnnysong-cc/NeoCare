@@ -27,6 +27,7 @@ class EmtDashboardActivity : AppCompatActivity() {
 
         requestButton = findViewById(R.id.requestButton)
         viewPatientsButton = findViewById(R.id.viewPatientsButton)
+//        updatePatientsButton = findViewById(R.id.updatePatentsButton)
         updateProfileButton = findViewById(R.id.updateProfileButton)
         communicationToolButton = findViewById(R.id.communicationToolButton)
         medicalGuidelinesButton = findViewById(R.id.medicalGuidelinesButton)
@@ -37,20 +38,20 @@ class EmtDashboardActivity : AppCompatActivity() {
             // Handle EMT request action
             // To initiate an emergency request process
             // For ideal, open a new activity to request medical assistance
-            startActivity(Intent(this@EmtDashboardActivity, EmtRequestActivity::class.java))
+//            startActivity(Intent(this@EmtDashboardActivity, EmtRequestActivity::class.java))
         }
 
         viewPatientsButton.setOnClickListener {
             // Handle EMT's ability to view patient information
             // To navigate to a screen that displays a list of patients
             // and allows EMTs to access patient data.
-            startActivity(Intent(this@EmtDashboardActivity, ViewPatientsActivity::class.java))
+//            startActivity(Intent(this@EmtDashboardActivity, ViewPatientsActivity::class.java))
         }
 
         updatePatientButton.setOnClickListener {
             // Allow EMT to update patient information
             // Navigation
-            startActivity(Intent(this@EmtDashboardActivity, updatePatientActivity::class.java))
+//            startActivity(Intent(this@EmtDashboardActivity, updatePatientActivity::class.java))
         }
 
         updateProfileButton.setOnClickListener {
@@ -62,19 +63,19 @@ class EmtDashboardActivity : AppCompatActivity() {
         communicationToolButton.setOnClickListener {
             // Handle EMT's communication tool to contact the patient
             // Provide a screen with contact details of the patient and options to make calls or initiate video chats.
-            startActivity(Intent(this@EmtDashboardActivity, EmtCommunicationActivity::class.java))
+//            startActivity(Intent(this@EmtDashboardActivity, EmtCommunicationActivity::class.java))
         }
 
         medicalGuidelinesButton.setOnClickListener {
             // Handle EMT's access to medical guidelines and protocols
             // Create a screen to display medical guidelines and protocols for complex or rare medical conditions.
-            startActivity(Intent(this@EmtDashboardActivity, EmtMedicalGuidelinesActivity::class.java))
+//            startActivity(Intent(this@EmtDashboardActivity, EmtMedicalGuidelinesActivity::class.java))
         }
 
         medicalEducationButton.setOnClickListener {
             // Handle EMT's access to continuing medical education
             // Provide links to valuable resources and courses related to emergency medical services.
-            startActivity(Intent(this@EmtDashboardActivity, EmtMedicalEducationActivity::class.java))
+//            startActivity(Intent(this@EmtDashboardActivity, EmtMedicalEducationActivity::class.java))
         }
 
 
