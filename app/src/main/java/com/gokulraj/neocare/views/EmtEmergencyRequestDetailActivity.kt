@@ -5,19 +5,20 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.gokulraj.neocare.database.RequestStatus
-import com.gokulraj.neocare.databinding.ActivityEmtEmergencyrequestDetailsBinding
+import com.gokulraj.neocare.databinding.ActivityEmtEmergencyrequestDetailBinding
+
 
 /**
  * To handle viewing, updating, and transferring an emergency request.
  * */
 class EmtEmergencyRequestDetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityEmtEmergencyrequestDetailsBinding
+    private lateinit var binding: ActivityEmtEmergencyrequestDetailBinding
     private var requestId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityEmtEmergencyrequestDetailsBinding.inflate(layoutInflater)
+        binding = ActivityEmtEmergencyrequestDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         requestId = intent.getStringExtra("REQUEST_ID")

@@ -7,6 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.gokulraj.neocare.R
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ *
+ * EMT Operation Entry Point
+ *
+ * */
 class EmtDashboardActivity : AppCompatActivity() {
 
     private lateinit var emergencyRequestButton: Button
@@ -46,7 +51,7 @@ class EmtDashboardActivity : AppCompatActivity() {
         }
 
         viewPatientsButton.setOnClickListener {
-//            startActivity(Intent(this, ViewPatientsActivity::class.java))
+            startActivity(Intent(this, ViewPatientsActivity::class.java))
         }
 
 

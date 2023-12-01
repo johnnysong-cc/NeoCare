@@ -44,6 +44,8 @@
         <activity android:name=".views.EmtEmergencyRequestActivity"/>
         <activity android:name=".views.EmtEmergencyRequestDetailActivity"/>
         <activity android:name=".views.EmtEmergencyRequestTransferActivity"/>
+        <activity android:name=".views.ViewPatientsActivity"/>
+        <activity android:name=".views.PatientDetailActivity"/>
         <activity android:name=".views.LoginActivity"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:exported="true">
