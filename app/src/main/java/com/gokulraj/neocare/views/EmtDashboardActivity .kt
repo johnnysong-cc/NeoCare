@@ -64,7 +64,7 @@ class EmtDashboardActivity : AppCompatActivity() {
         }
 
         medicalEducationButton.setOnClickListener {
-//            startActivity(Intent(this, MedicalEducationActivity::class.java))
+            startActivity(Intent(this, MedicalEducationActivity::class.java))
         }
 
         logoutButton.setOnClickListener {

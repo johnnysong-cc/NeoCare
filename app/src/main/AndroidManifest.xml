@@ -53,6 +53,7 @@
         <activity android:name=".views.PatientDetailActivity"/>
         <activity android:name=".views.CommunicationToolActivity"/>
         <activity android:name=".views.MedicalGuidelinesActivity"/>
+        <activity android:name=".views.MedicalEducationActivity"/>
         <activity android:name=".views.LoginActivity"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:exported="true">
