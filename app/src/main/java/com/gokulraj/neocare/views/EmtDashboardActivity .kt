@@ -56,7 +56,7 @@ class EmtDashboardActivity : AppCompatActivity() {
 
 
         communicationToolButton.setOnClickListener {
-//            startActivity(Intent(this, CommunicationToolActivity::class.java))
+            startActivity(Intent(this, CommunicationToolActivity::class.java))
         }
 
         medicalGuidelinesButton.setOnClickListener {
