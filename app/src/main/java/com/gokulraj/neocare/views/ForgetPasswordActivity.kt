@@ -11,6 +11,32 @@ import com.google.firebase.database.*
 /**
  *
  * Apply to all entities
+ *
+ * --------------------------
+ * potential steps to address this issue:
+ *
+ * Enable reCAPTCHA in Firebase Console:
+ *
+ * Go to your Firebase Console.
+ * Select your project.
+ * Navigate to the Authentication section.
+ * Under the Sign-in method tab, find the section about password reset.
+ * Make sure that the reCAPTCHA setting is correctly configured. If you are using the Firebase Authentication UI, it should handle reCAPTCHA automatically.
+ * Update Firebase Dependencies:
+ *
+ * Ensure that your project has the latest Firebase Authentication SDK. Outdated SDKs may lead to unexpected issues.
+ * Testing on a Real Device:
+ *
+ * Sometimes, Firebase reCAPTCHA verification can have issues when tested on emulators. Try running your app on a real device.
+ * Implementing Custom reCAPTCHA:
+ *
+ * If you are not using Firebase's built-in UI for authentication and implementing your own custom authentication flow, you might need to handle reCAPTCHA verification manually. This involves embedding a reCAPTCHA verifier in your password reset flow.
+ * Check Network Restrictions:
+ *
+ * Some network configurations or VPNs might interfere with reCAPTCHA. Ensure that there's no such interference.
+ * Examine Code for Email Sending:
+ *
+ * Ensure that your code for sending the password reset email is correctly implemented as per Firebase documentation.
  * */
 class ForgetPasswordActivity : AppCompatActivity() {
 

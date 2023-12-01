@@ -3,7 +3,6 @@ package com.gokulraj.neocare.views
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.gokulraj.neocare.database.EmergencyTechnician
 import com.gokulraj.neocare.databinding.ActivityEmtLoginBinding
@@ -28,7 +27,7 @@ class EmtLoginActivity : AppCompatActivity() {
         }
 
         binding.registerLink.setOnClickListener {
-            startActivity(Intent(this, EmtRegistrationActivity:: class.java))
+            startActivity(Intent(this, EmtRegistrationActivity::class.java))
             finish()
         }
 
@@ -36,41 +35,41 @@ class EmtLoginActivity : AppCompatActivity() {
             startActivity(Intent(this, ForgetPasswordActivity::class.java))
             finish()
         }
-
     }
 
     private fun loginEmt() {
-        // Implement the login logic specific to EMTs
-        // To check EMT credentials and navigate to the EMT-specific dashboard
-        // Similar to the registration process, you can validate EMT credentials
-        // and handle the login process.
-
         val email = binding.emailAddressEt.text.toString().trim()
         val password = binding.passwordEt.text.toString().trim()
 
-        databaseReference.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(object :
-            ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Email and password must not be empty", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        databaseReference.orderByChild("email").equalTo(email)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    var loginSuccessful = false
+
                     for (userSnapshot in snapshot.children) {
                         val userData = userSnapshot.getValue(EmergencyTechnician::class.java)
-                        if (userData != null && userData.password == password) {
-                            val userType = userData.userType
-                            if (userType == "EMT") {
-                                // EMT login successful, navigate to EMT dashboard
-                                startActivity(Intent(this@EmtLoginActivity, EmtDashboardActivity::class.java))
-                                finish()
-                            }
+                        if (userData != null && userData.password == password && userData.userType == "EMT") {
+                            loginSuccessful = true
+                            startActivity(Intent(this@EmtLoginActivity, EmtDashboardActivity::class.java))
+                            finish()
+                            break
                         }
                     }
+                    // To avoid login misjudgement
+                    if (!loginSuccessful) {
+                        Toast.makeText(this@EmtLoginActivity, "Login Failed! Please check your credentials.", Toast.LENGTH_SHORT).show()
+                    }
                 }
-                Toast.makeText(this@EmtLoginActivity, "Login Failed! Please check your credentials.", Toast.LENGTH_SHORT).show()
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@EmtLoginActivity, "Database Error: ${error.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@EmtLoginActivity, "Database Error: ${error.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
     }
 
     override fun onBackPressed() {
@@ -78,5 +77,4 @@ class EmtLoginActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
 }

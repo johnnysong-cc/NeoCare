@@ -22,74 +22,74 @@
         android:textStyle="bold"
         android:textColor="@color/white" />
 
+    <!-- View Patients Button -->
+
+    <!-- Update Profile Button -->
+
+    <!-- Communication Tool Button -->
+
+    <!-- Medical Guidelines Button -->
+
+    <!-- Medical Education Button -->
+
+    <!-- Logout Button -->
+
     <Button
         android:id="@+id/requestButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Emergency Request"
         android:layout_below="@+id/emtDashboardHeader"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="63dp"
+        android:text="Emergency Request"
+        android:textColor="@color/red"
+        android:textStyle="bold" />
 
-    <!-- View Patients Button -->
     <Button
         android:id="@+id/viewPatientsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Patients"
         android:layout_below="@+id/requestButton"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="34dp"
+        android:text="View Patients" />
 
-    <!-- Update Profile Button -->
     <Button
         android:id="@+id/updateProfileButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Profile"
-        android:layout_below="@+id/viewPatientsButton"
         android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:text="Update Profile" />
 
-    <!-- Communication Tool Button -->
     <Button
         android:id="@+id/communicationToolButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Communication Tool"
         android:layout_below="@+id/updateProfileButton"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="207dp"
+        android:text="Communication Tool" />
 
-    <!-- Medical Guidelines Button -->
     <Button
         android:id="@+id/medicalGuidelinesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Medical Guidelines"
         android:layout_below="@+id/communicationToolButton"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="30dp"
+        android:text="Medical Guidelines" />
 
-    <!-- Medical Education Button -->
     <Button
         android:id="@+id/medicalEducationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Medical Education"
         android:layout_below="@+id/medicalGuidelinesButton"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="23dp"
+        android:text="Medical Education" />
 
-    <!-- Logout Button -->
     <Button
         android:id="@+id/logoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout"
         android:layout_below="@+id/medicalEducationButton"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="31dp"
+        android:text="Logout" />
 
     <!-- Additional components and layout can be added based on your application's requirements -->
 
