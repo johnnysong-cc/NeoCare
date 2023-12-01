@@ -60,7 +60,7 @@ class EmtDashboardActivity : AppCompatActivity() {
         }
 
         medicalGuidelinesButton.setOnClickListener {
-//            startActivity(Intent(this, MedicalGuidelinesActivity::class.java))
+            startActivity(Intent(this, MedicalGuidelinesActivity::class.java))
         }
 
         medicalEducationButton.setOnClickListener {
