@@ -41,6 +41,9 @@
         <activity android:name=".views.ForgetPasswordActivity"/>
         <activity android:name=".views.ResetPasswordActivity"/>
         <activity android:name=".views.EmtProfileActivity"/>
+        <activity android:name=".views.EmtEmergencyRequestActivity"/>
+        <activity android:name=".views.EmtEmergencyRequestDetailActivity"/>
+        <activity android:name=".views.EmtEmergencyRequestTransferActivity"/>
         <activity android:name=".views.LoginActivity"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:exported="true">

@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class EmtDashboardActivity : AppCompatActivity() {
 
-    private lateinit var requestButton: Button
+    private lateinit var emergencyRequestButton: Button
     private lateinit var viewPatientsButton: Button
     private lateinit var updateProfileButton: Button
     private lateinit var communicationToolButton: Button
@@ -26,7 +26,7 @@ class EmtDashboardActivity : AppCompatActivity() {
     }
 
     private fun initializeButtons() {
-        requestButton = findViewById(R.id.requestButton)
+        emergencyRequestButton = findViewById(R.id.requestButton)
         viewPatientsButton = findViewById(R.id.viewPatientsButton)
         updateProfileButton = findViewById(R.id.updateProfileButton)
         communicationToolButton = findViewById(R.id.communicationToolButton)
@@ -41,8 +41,8 @@ class EmtDashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, EmtProfileActivity::class.java))
         }
 
-        requestButton.setOnClickListener {
-//            startActivity(Intent(this, EmtRequestActivity::class.java))
+        emergencyRequestButton.setOnClickListener {
+            startActivity(Intent(this, EmtEmergencyRequestActivity::class.java))
         }
 
         viewPatientsButton.setOnClickListener {
